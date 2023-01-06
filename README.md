@@ -1,92 +1,148 @@
-# Reto Promarketing
+# Reto-DevOps 
+![Promarketing Chile](https://promarketingchile.com/wp-content/uploads/2020/03/Logo-promarketing.jpeg)
 
+Este reto fue diseñado para mostrar tus habilidades DevOps. 
 
+¡¡Te damos la bienvenida al desafío de Promarketing Chile!! Si estás en este proceso, es porque nos interesa que puedas ser parte de nuestro equipo.
+## Fase del proceso de selección:
+Antes de comenzar con el desafío, te recomendamos leer las siguientes instrucciones:
 
-## Getting started
+Es importante que realices el reto en forma tranquila (tendrás 3 días máximo para poder enviarlo). No te preocupes sino puedes completar todas las fases, para nosotros es importante que realices lo que consideras que tienes experiencia.
+  
+Una vez completado, no olvide notificar la solución **a Karin Martinez kmartinez@promarketingchile.com**
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Si tienes alguna duda, puedes escribir o enviar un correo a Karin Martinez kmartinez@promarketingchile.com
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+¡Te deseamos mucho éxito!
 
-## Add your files
+## La app
+![NodeJs]
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+```bash
+$ git clone https://gitlab.com/promarketingchile/reto-promarketing.git
+Cloning into 'reto-promarketing'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (3/3), done.
+$ cd ./reto-promarketing
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/promarketingchile/reto-promarketing.git
-git branch -M main
-git push -uf origin main
+### Instalar Dependencias
+```bash
+$ npm install
+npm WARN basicservice@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+added 530 packages from 308 contributors and audited 1203947 packages in 34.589s
+
+21 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+### Ejecutar Test
+![Jest](data:image/png;base64,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)
+
+```bash
+$ npm run test
+
+> basicservice@1.0.0 test /basic-unit-test
+> jest
+
+ PASS  tests/sum.test.js
+ PASS  tests/string.test.js
+
+Test Suites: 2 passed, 2 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        5.655s
+Ran all test suites.
 ```
 
-## Integrate with your tools
+### Ejecutar la app
+```bash
+$ node index.js
+Example app listening on port 3000!
+```
+Podrá acceder a la API localmente en el puerto `3000`.
 
-- [ ] [Set up project integrations](https://gitlab.com/promarketingchile/reto-promarketing/-/settings/integrations)
+```bash
+$ curl -s localhost:3000/ | jq
+{
+  "msg": "ApiRest prueba"
+}
+$ curl -s localhost:3000/public | jq
+{
+  "public_token": "12837asd98a7sasd97a9sd7"
+}
+$ curl -s localhost:3000/private | jq
+{
+  "private_token": "TWFudGVuIGxhIENsYW1hIHZhcyBtdXkgYmllbgo="
+}
+```
 
-## Collaborate with your team
+**NT:** En nuestro equipo consideramos que cada aplicación debe venir bien documentada por parte del desarrollador para que el equipo de **DevOps** puede realizar los procesos de automatización de una manera mas eficaz.
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+## El reto comienza aquí
+Tienes que hacer un **fork** de este repositorio para completar los siguientes retos en tu propia cuenta de `gitlab`. **Siéntete libre de resolver el reto que desees.** La cantidad de retos resueltos nos va a permitir valorar tus habilidades y realizar una **oferta en base a las mismas**.
 
-## Test and Deploy
+1. Una vez completado, no olvide notificar la solución al **Karin Martinez (kmartinez@promarketingchile.com.)**
+2. **La solución debe venir bien documentada, ten en cuenta que vamos a ejecutar la solución que nos envies para realizar la evaluación**
+3. **Tiempo de solución 3 días**
 
-Use the built-in continuous integration in GitLab.
+Si tiene alguna duda, adelante, [abre un issue](https://gitlab.com/promarketingchile/reto-promarketing/-/issues) para hacer cualquier pregunta sobre cualquier reto.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+### Reto 1. Dockerize la aplicación
+![docker](https://i.imgur.com/CX0Xql8.png)
 
-***
 
-# Editing this README
+¿Qué pasa con los contenedores? En este momento **(2023)**, los contenedores son un estándar para implementar aplicaciones **(en la nube o en sistemas locales)**. Entonces, el reto es:
+1. Construir la imagen más pequeña que pueda. Escribe un buen Dockerfile :)
+2. Ejecutar la app como un usuario diferente de root.
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+### Reto 2. Docker Compose
+![compose](https://i.imgur.com/1bprdVW.png)
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+Una vez que haya dockerizado todos los componentes de la API *(aplicación de NodeJS)*, estarás listo para crear un archivo docker-compose, en nuestro equipo solemos usarlo para levantar ambientes de desarrollo antes de empezar a escribir los pipeline. Ya que la aplicación se ejecuta sin ninguna capa para el manejo de protocolo http, debes añadir:
 
-## Name
-Choose a self-explaining name for your project.
+1. Nginx que funcione como proxy reverso a nuesta app Nodejs
+2. Asegurar el endpoint /private con auth_basic
+3. Habilitar https y redireccionar todo el trafico 80 --> 443
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+### Reto 3. Probar la aplicación en cualquier sistema CI/CD
+![cicd](https://gitlab.com/clm-public/reto-devops/-/raw/master/img/cicd.jpg)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Como buen ingeniero devops, conoces las ventajas de ejecutar tareas de forma automatizada. Hay algunos sistemas de cicd que pueden usarse para que esto suceda. Elige uno, travis-ci, gitlab-ci, circleci ... lo que quieras. Danos una tubería exitosa. **Gitlab-CI** es nuestra herramienta de uso diario por lo cual obtendras puntos extras si usas gitlab.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Reto 4. Deploy en kubernetes
+![k8s](https://gitlab.com/clm-public/reto-devops/-/raw/master/img/k8s.png)
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+Ya que eres una máquina creando contenedores, ahora queremos ver tu experiencia en k8s. Use un sistema kubernetes para implementar la API. Recomendamos que uses herramientas como Minikube o Microk8s.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Escriba el archivo de implementación (archivo yaml) utilizalo para implementar su API (aplicación Nodejs).
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+* añade **Horizontal Pod Autoscaler** a la app NodeJS
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+### Reto 5. Construir Chart en helm y manejar trafico http(s)
+![helm](https://gitlab.com/clm-public/reto-devops/-/raw/master/img/helm-logo-1.jpg)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+Realmente el pan de cada día es crear, modificar y usar charts de helm. Este reto consiste en:
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+1. Diseñar un chart de helm con nginx que funcione como proxy reverso a nuesta app Nodejs
+2. Asegurar el endpoint /private con auth_basic
+3. Habilitar https y redireccionar todo el trafico 80 --> 443
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+### Reto 6. Terraform
+![docker](https://gitlab.com/clm-public/reto-devops/-/raw/master/img/tf.png)
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+En estos días en IaC no se habla de más nada que no sea terraform, en **Promarketing** ya nos encontramos con pipeline automatizados de Iac. El reto consiste en crear un modulo de terraform que nos permita crear un **rbac.authorization de tipo Role** que solo nos permita ver los pods de nuestro **namespace donde se encuentra al app Nodejs**
 
-## License
-For open source projects, say how it is licensed.
+### Reto 7. Automatiza el despliegue de los retos realizados
+![docker](data:image/png;base64,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)
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Ya que hoy en día no queremos recordar recetas ni comandos, el reto consiste en **automatizar los retos en un Makefile**, considera especificar cuales son las dependencias necesarias para que tu Makefile se ejecute sin problemas.
+
+**NT:** Se evaluará el orden en el cual se encuentre el repositorio, en el gran universo de aplicaciones que existe hoy en día el orden es un factor importante.
