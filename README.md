@@ -142,6 +142,7 @@ En estos días en IaC no se habla de más nada que no sea terraform, en **Promar
 
 ### Reto 7. Automatiza el despliegue de los retos realizados
 ![makefile](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzFcsGeX0pJY5fQgpr3H8onh3CVV0l5JK2Rw&usqp=CAU)
+
 Ya que hoy en día no queremos recordar recetas ni comandos, el reto consiste en **automatizar los retos en un Makefile**, considera especificar cuales son las dependencias necesarias para que tu Makefile se ejecute sin problemas.
 
 **NT:** Se evaluará el orden en el cual se encuentre el repositorio, en el gran universo de aplicaciones que existe hoy en día el orden es un factor importante.
