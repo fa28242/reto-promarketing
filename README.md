@@ -9,9 +9,9 @@ Antes de comenzar con el desafío, te recomendamos leer las siguientes instrucci
 
 Es importante que realices el reto en forma tranquila (tendrás 3 días máximo para poder enviarlo). No te preocupes sino puedes completar todas las fases, para nosotros es importante que realices lo que consideras que tienes experiencia.
   
-Una vez completado, no olvide notificar la solución **a Karin Martinez kmartinez@promarketingchile.com**
+Una vez completado, no olvide notificar la solución **a Héctor Garzo hgarzo@promarketingchile.com**
 
-Si tienes alguna duda, puedes escribir o enviar un correo a Karin Martinez kmartinez@promarketingchile.com
+Si tienes alguna duda, puedes escribir o enviar un correo a Héctor Garzo hgarzo@promarketingchile.com
 
 ¡Te deseamos mucho éxito!
 
@@ -19,14 +19,14 @@ Si tienes alguna duda, puedes escribir o enviar un correo a Karin Martinez kmart
 ![NodeJs]
 
 ```bash
-$ git clone https://gitlab.com/promarketingchile/reto-promarketing.git
-Cloning into 'reto-promarketing'...
+$ git clone https://hgarzo1@bitbucket.org/promarketing/reto-infra-promarketing.git
+Cloning into 'reto-infra-promarketing'...
 remote: Enumerating objects: 3, done.
 remote: Counting objects: 100% (3/3), done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
-$ cd ./reto-promarketing
+$ cd ./reto-infra-promarketing
 
 ```
 ### Instalar Dependencias
@@ -89,7 +89,7 @@ $ curl -s localhost:3000/private | jq
 ## El reto comienza aquí
 Tienes que hacer un **fork** de este repositorio para completar los siguientes retos en tu propia cuenta de `gitlab`. **Siéntete libre de resolver el reto que desees.** La cantidad de retos resueltos nos va a permitir valorar tus habilidades y realizar una **oferta en base a las mismas**.
 
-1. Una vez completado, no olvide notificar la solución al **Karin Martinez (kmartinez@promarketingchile.com.)**
+1. Una vez completado, no olvide notificar la solución al **Héctor Garzo (hgarzo@promarketingchile.com.)**
 2. **La solución debe venir bien documentada, ten en cuenta que vamos a ejecutar la solución que nos envies para realizar la evaluación**
 3. **Tiempo de solución 3 días**
 
@@ -99,7 +99,7 @@ Si tiene alguna duda, adelante, [abre un issue](https://gitlab.com/promarketingc
 ![docker](https://i.imgur.com/CX0Xql8.png)
 
 
-¿Qué pasa con los contenedores? En este momento **(2023)**, los contenedores son un estándar para implementar aplicaciones **(en la nube o en sistemas locales)**. Entonces, el reto es:
+¿Qué pasa con los contenedores? En este momento **(2025)**, los contenedores son un estándar para implementar aplicaciones **(en la nube o en sistemas locales)**. Entonces, el reto es:
 1. Construir la imagen más pequeña que pueda. Escribe un buen Dockerfile :)
 2. Ejecutar la app como un usuario diferente de root.
 
