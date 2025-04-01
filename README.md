@@ -70,13 +70,19 @@ stages:
 
 ### Archivos YAML:
 - `deployment.yaml`
-- `service.yaml`
 - `hpa.yaml`
+- `htpasswd-secret.yaml`
+- `nginx-ingress.yaml`
+- `nginxconfigmap.yaml`
+- `tls-secret.yaml`
 
 Comandos:
 ```bash
 kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
+kubectl apply -f nginx-ingress.yaml
+kubectl apply -f nginx-configmap.yaml
+kubectl apply -f tls-secret.yaml
+kubectl apply -f htpasswd-secret.yaml
 kubectl apply -f hpa.yaml
 ```
 
