@@ -45,7 +45,7 @@ docker-compose up -d --build
 Pruebas:
 ```bash
 curl -k https://localhost
-curl -k -u usuario:mipassword https://localhost/private
+curl -k -u usuario:mipassword https://localhost/private # Base64 de "username:password"
 ```
 
 ---
