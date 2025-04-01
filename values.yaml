@@ -1,0 +1,12 @@
+nginx:
+  authUser: usuario
+  authPassword: mipassword
+  ssl:
+    crt: |-
+      -----BEGIN CERTIFICATE-----
+      ...
+      -----END CERTIFICATE-----
+    key: |-
+      -----BEGIN PRIVATE KEY-----
+      ...
+      -----END PRIVATE KEY-----

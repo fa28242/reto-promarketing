@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: node-app
-        image: myrepo/node-app:latest  # Asegúrate de usar la imagen correcta
+        image: 28242fa/reto-promarketing:latest
         ports:
         - containerPort: 3000
         resources:
