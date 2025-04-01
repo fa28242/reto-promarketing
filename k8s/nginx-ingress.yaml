@@ -13,32 +13,33 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
-        - containerPort: 443
-        volumeMounts:
-        - name: nginx-config
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-        - name: nginx-ssl
-          mountP
-  name: nginx-ssl
-          mountPath: /etc/nginx/certs
-        - name: nginx-htpasswd
-          mountPath: /etc/nginx/.htpasswd
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          volumeMounts:
+            - name: nginx-config
+              mountPath: /etc/nginx/nginx.conf
+              subPath: nginx.conf
+            - name: nginx-ssl
+              mountPath: /etc/nginx/certs
+            - name: nginx-htpasswd
+              mountPath: /etc/nginx/.htpasswd
+              subPath: .htpasswd
       volumes:
-      - name: nginx-config
-        configMap:
-          name: nginx-config
-      - name: nginx-ssl
-        secret:
-          secretName: tls-secret
-      - name: nginx-htpasswd
-        secret:
-          secretName: htpasswd-secret
+        - name: nginx-config
+          configMap:
+            name: nginx-config
+        - name: nginx-ssl
+          secret:
+            secretName: tls-secret
+        - name: nginx-htpasswd
+          secret:
+            secretName: htpasswd-secret
+
 ---
+
 apiVersion: v1
 kind: Service
 metadata:
@@ -48,6 +49,6 @@ spec:
     app: nginx
   ports:
     - protocol: TCP
-port: 443
+      port: 443
       targetPort: 443
   type: LoadBalancer
