@@ -50,18 +50,58 @@ curl -k -u usuario:mipassword https://localhost/private
 
 ---
 
-## 🤖 Reto 3: CI/CD con GitLab CI
+## 🤖 Reto 3: CI/CD con Bitbucket Pipelines y Jenkins
 
-### `.gitlab-ci.yml` ejecuta:
-- Construcción de la imagen
-- Pruebas unitarias con Jest
+### 📁 Bitbucket Pipelines
 
-La pipeline se ejecuta automáticamente al hacer push a GitLab.
+Se utiliza `bitbucket-pipelines.yml` o `Jenkinsfile`para automatizar el flujo de CI/CD dentro del repositorio Bitbucket.
 
-```yaml
-stages:
-  - build
-  - test
+#### Etapas:
+- **Build & Push**: construye la imagen Docker con `docker-compose` y la sube a un registro (DockerHub o similar).
+- **Deploy**: intenta desplegar en Kubernetes usando Minikube (⚠️ solo válido si se ejecuta en runners con acceso local).
+
+#### Recomendaciones:
+- Reemplazar `dummy_user` y `dummy_pass` por variables seguras: `DOCKER_USERNAME` y `DOCKER_PASSWORD` definidas en el entorno del repositorio.
+- En lugar de Minikube, usar un clúster real accesible con `kubectl`.
+
+### 📁 Jenkinsfile
+
+Se puede utilizar un `Jenkinsfile` para definir una pipeline declarativa que contenga:
+
+```groovy
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        sh 'docker-compose build'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'npm install && npm test'
+      }
+    }
+    stage('Push Image') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+          sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+          sh 'docker-compose push'
+        }
+      }
+    }
+    stage('Deploy to K8s') {
+      steps {
+          sh 'deployment.yaml'
+          sh 'hpa.yaml'
+          sh 'htpasswd-secret.yaml'
+          sh 'nginx-ingress.yaml'
+          sh 'nginxconfigmap.yaml'
+          sh 'tls-secret.yaml'
+      }
+    }
+  }
+}
 ```
 
 ---
