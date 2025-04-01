@@ -1,0 +1,5 @@
+apiVersion: v2
+name: nginx-reverse-proxy
+description: Nginx proxy reverso con autenticacion y HTTPS
+version: 1.0.0
+appVersion: 1.21.6

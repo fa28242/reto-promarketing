@@ -1,0 +1,27 @@
+image: docker:latest
+
+pipelines:
+  default:
+    - step:
+        name: Build and Push Docker Images
+        services:
+          - docker
+        caches:
+          - docker
+        script:
+          - export IMAGE_TAG=$BITBUCKET_COMMIT
+          - docker-compose build
+          - echo "dummy_pass" | docker login -u "dummy_user" --password-stdin
+          - docker-compose push
+
+    - step:
+        name: Deploy to Minikube
+        services:
+          - docker
+        script:
+          - apk add --no-cache curl bash
+          - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+          - chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+          - kubectl config use-context minikube
+          - docker-compose -f docker-compose.yml up -d
+          - kubectl get pods
