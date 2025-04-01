@@ -186,7 +186,11 @@ make terraform-apply
 reto-infra-promarketing/
 ├── Dockerfile
 ├── docker-compose.yml
-├── .gitlab-ci.yml
+├── Jenkinsfile
+├── bitbucket-pipelines.yml
+├── index.js
+├── package-lock.json
+├── package.json
 ├── Makefile
 ├── k8s
     ├── deployment.yaml
