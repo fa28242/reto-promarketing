@@ -13,17 +13,17 @@ spec:
         app: node-app
     spec:
       containers:
-      - name: node-app
-        image: 28242fa/reto-promarketing:latest
-        ports:
-        - containerPort: 3000
-        resources:
-          requests:
-            cpu: "100m"
-            memory: "128Mi"
-          limits:
-            cpu: "500m"
-memory: "256Mi"
+        - name: node-app
+          image: 28242fa/reto-promarketing:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
 
 ---
 
