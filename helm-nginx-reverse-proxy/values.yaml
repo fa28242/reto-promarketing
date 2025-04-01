@@ -1,0 +1,27 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+
+ingress:
+  enabled: true
+  host: myapp.local
+  tls:
+    enabled: true
+    secretName: nginx-tls-secret
+
+basicAuth:
+  enabled: true
+  username: user
+  password: pass123  # Se encriptará en `htpasswd`
+
+nodeApp:
+  host: node-app
+  port: 3000
